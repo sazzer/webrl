@@ -1,0 +1,22 @@
+{
+  "name": "roguelike",
+  "description": "HTML Roguelike",
+  "version": "0.0.1",
+  "author": "Graham Cox <graham@grahamcox.co.uk>",
+  "dependencies": {
+    "express": "~3.4.8"
+  },
+  "devDependencies": {
+    "vows": "~0.7.0"
+  },
+  "bin": {},
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "vows --spec"
+  },
+  "licenses": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sazzer/webrl.git"
+  }
+}

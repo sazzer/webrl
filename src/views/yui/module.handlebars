@@ -1,0 +1,9 @@
+YUI.add('{{name}}', function(Y) {
+{{contents}}
+}, '{{version}}', {
+    requires: [
+        {{#each config.requires}}
+            '{{this}}'{{#unless @last}},{{/unless}}
+        {{/each}}
+    ]
+});

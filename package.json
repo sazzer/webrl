@@ -10,12 +10,12 @@
     "selfish": "~0.3.2"
   },
   "devDependencies": {
-    "vows": "~0.7.0"
+    "mocha": "~1.17.1"
   },
   "bin": {},
   "scripts": {
     "start": "node src/main.js",
-    "test": "vows --spec"
+    "test": "mocha --reporter spec --recursive src/spec"
   },
   "licenses": [],
   "repository": {

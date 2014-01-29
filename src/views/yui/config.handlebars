@@ -1,0 +1,26 @@
+YUI_config = {
+    "groups": {
+        "{{group}}": {
+            "base": "yui/",
+            "modules": {
+                {{#each modules}}
+                    {{#unless @first}},{{/unless}}
+                    "{{@key}}": {
+                        "path": "{{@key}}/{{@key}}.js",
+                        "type": "js",
+                        "requires": [
+                            {{#each this.requires}}
+                                "{{this}}"{{#unless @last}},{{/unless}}
+                            {{/each}}
+                        ],
+                        "lang": [
+                            {{#each this.lang}}
+                                "{{this}}"{{#unless @last}},{{/unless}}
+                            {{/each}}
+                        ]
+                    }
+                {{/each}}
+            }
+        }
+    }
+}

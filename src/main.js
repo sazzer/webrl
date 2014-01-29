@@ -27,7 +27,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/yui/config.js', yui.config);
-app.get('/yui/:module.js', yui.module);
+app.get('/yui/:module/:module.js', yui.module);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

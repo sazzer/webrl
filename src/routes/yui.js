@@ -5,7 +5,25 @@ var fs = require('fs'),
     path = require('path');
 
 exports.config = function(req, res) {
-    res.send('YUI Config Here');
+    var modules = {
+        'webrl-app': {
+            requires: [
+                'app',
+                'webrl-main-view'
+            ],
+            lang: ['en']
+        },
+        'webrl-main-view': {
+            requires: [
+                'view'
+            ],
+            lang: ['en']
+        }
+    };
+    res.render('yui/config', {
+        group: 'webrl',
+        modules: modules
+    });
 };
 
 exports.module = function(req, res) {

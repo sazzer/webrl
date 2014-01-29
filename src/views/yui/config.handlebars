@@ -12,12 +12,12 @@ YUI_config = {
                             {{#each this.requires}}
                                 "{{this}}"{{#unless @last}},{{/unless}}
                             {{/each}}
-                        ],
+                        ]{{#if this.lang}},
                         "lang": [
                             {{#each this.lang}}
                                 "{{this}}"{{#unless @last}},{{/unless}}
                             {{/each}}
-                        ]
+                        ]{{/if}}
                     }
                 {{/each}}
             }

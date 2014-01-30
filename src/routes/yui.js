@@ -30,3 +30,34 @@ exports.module = function(req, res) {
         res.send(404, "Failed to load module: " + moduleName);
     });
 };
+
+exports.lang = function(req, res) {
+    var moduleName = req.params[0],
+        lang = req.params[1];
+    console.log("Getting strings for module " + moduleName + " in language " + lang);
+    yui.module(moduleName).then(function(module) {
+        var strings = module.config.strings;
+        if (strings) {
+            var rootStrings = strings.root || {},
+                langStrings = strings[lang] || {},
+                merged = {};
+
+            Object.keys(rootStrings).forEach(function(k) {
+                merged[k] = rootStrings[k];
+            });
+            Object.keys(langStrings).forEach(function(k) {
+                merged[k] = langStrings[k];
+            });
+            res.type('text/javascript');
+            res.render('yui/lang', {
+                lang: merged
+            });
+        } else {
+            console.log("No strings available for module " + moduleName);
+            res.send(404, "No strings available for module " + moduleName);
+        }
+    }, function(error) {
+        console.log(error);
+        res.send(404, "Failed to load module: " + moduleName);
+    });
+};

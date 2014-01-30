@@ -15,7 +15,7 @@ YUI_config = {
                         ]{{#if this.lang}},
                         "lang": [
                             {{#each this.lang}}
-                                "{{this}}"{{#unless @last}},{{/unless}}
+                                {{#unless @first}},{{/unless}}"{{this}}"
                             {{/each}}
                         ]{{/if}}
                     }

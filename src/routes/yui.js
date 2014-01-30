@@ -14,6 +14,7 @@ exports.config = function(req, res) {
             group: 'webrl',
             modules: modules
         });
+        console.log(modules);
     }, function(error) {
         console.log(error);
         res.send(404, "Failed to load module: " + moduleName);

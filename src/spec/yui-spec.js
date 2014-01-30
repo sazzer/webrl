@@ -37,12 +37,20 @@ describe('YUI', function() {
                     .and.have.length(1);
             });
         });
-        it('should contain a language of "en" for the module called "a"', function() {
+        it('should contain languages of "en" and "de" for the module called "a"', function() {
             return config.then(function(config) {
                 config['a'].should.have.property('lang')
                     .and.be.an.Array
                     .and.containEql('en')
-                    .and.have.length(1);
+                    .and.containEql('de')
+                    .and.have.length(2);
+            });
+        });
+        it('should contain strings for "root", "en" and "de" for the module called "a"', function() {
+            return config.then(function(config) {
+                config['a'].should.have.property('strings')
+                    .and.be.an.Object
+                    .and.have.properties('root', 'en', 'de')
             });
         });
         it('should contain dependencies of "a" and "view" for the module called "b"', function() {

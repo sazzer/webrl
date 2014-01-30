@@ -1,5 +1,15 @@
 {
     "requires": ["app"],
-    "lang": ["en"]
+    "strings": {
+        "root": {
+            "answer": "42"
+        },
+        "en": {
+            "hello": "Hello!"
+        },
+        "de": {
+            "hello": "Hallo!"
+        }
+    }
 }
 

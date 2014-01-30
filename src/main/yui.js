@@ -58,6 +58,14 @@ module.exports = Base.extend({
                     return Q.nfcall(fs.readFile, moduleData)
                         .then(JSON.parse)
                         .then(function(config) {
+                            if (config.strings) {
+                                config.lang = Object.keys(config.strings).filter(function(v) {
+                                    return v != "root";
+                                });
+                            }
+                            return config;
+                        })
+                        .then(function(config) {
                             config.name = module;
                             return config;
                         });

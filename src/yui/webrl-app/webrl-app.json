@@ -1,14 +1,13 @@
 {
-    "requires": ["app"],
+    "requires": [
+        "base",
+        "webrl-main-view"
+    ],
     "strings": {
         "root": {
             "title": "Web Roguelike"
         },
         "en": {
-            "title": "WebRL",
-            "hello": "World"
-        },
-        "de": {
         }
     }
 }

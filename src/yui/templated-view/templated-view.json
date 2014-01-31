@@ -1,7 +1,9 @@
 {
     "requires": [
         "base",
-        "templated-view"
+        "node",
+        "view"
     ]
 }
+
 

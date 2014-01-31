@@ -2,6 +2,13 @@
     "requires": [
         "base",
         "templated-view"
-    ]
+    ],
+    "strings": {
+        "root": {
+            "title": "Web Roguelike"
+        },
+        "en": {
+        }
+    }
 }
 

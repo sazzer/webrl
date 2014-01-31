@@ -2,7 +2,8 @@
     "requires": [
         "base",
         "node",
-        "view"
+        "view", 
+        "handlebars"
     ]
 }
 

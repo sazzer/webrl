@@ -2,12 +2,17 @@ Y.namespace("WebRL").MainView = Y.Base.create("webrl-main-view", Y.WebRL.Templat
         // Extensions
     ], {
         // Prototype
-        template: "<span>{{strings.title}}</span>"
+        template: [
+            "<div class='main-view'>",
+                "<div class='header'>",
+                "</div>",
+                "<div class='body'>",
+                "</div>",
+                "<div class='footer'>",
+                "</div>",
+            "</div>"].join("")
     }, {
         // Statics
         ATTRS: {
-            strings: {
-                value: Y.Intl.get("webrl-main-view")
-            }
         }
 });

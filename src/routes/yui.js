@@ -50,6 +50,8 @@ exports.lang = function(req, res) {
             });
             res.type('text/javascript');
             res.render('yui/lang', {
+                name: moduleName, 
+                language: lang, 
                 lang: merged
             });
         } else {

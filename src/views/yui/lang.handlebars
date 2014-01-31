@@ -1,6 +1,8 @@
-{
-{{#each lang}}
-    {{#unless @first}},{{/unless}}
-    "{{@key}}":"{{this}}"
-{{/each}}
-}
+YUI.add("lang/{{name}}_{{language}}", function(Y) {
+    Y.Intl.add("{{name}}", "{{language}}", {
+        {{#each lang}}
+            {{#unless @first}},{{/unless}}
+            "{{@key}}":"{{this}}"
+        {{/each}}
+    });
+});
